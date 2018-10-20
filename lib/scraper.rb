@@ -37,6 +37,8 @@ class Scraper
 
 end
 
+# page.css("div.class_name a").attribute("href")        # ==>"new_page.html"
+
 
 #
 # Scraper.scrape_profile_page(profile_url)
