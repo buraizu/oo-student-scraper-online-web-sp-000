@@ -30,8 +30,9 @@ class Scraper
         if social.css("a")[2]["href"]include?("github")
           profile_hash[:github] = social.css("a")[2]["href"]
         end
-        if social.css("a")[3]["href"] ==
-        profile_hash[:blog] = social.css("a")[3]["href"]
+        if social.css("a")[3]["href"].include?("blog")
+          profile_hash[:blog] = social.css("a")[3]["href"]
+        end
       end
       doc.css(".profile-quote").each do |quote|
         profile_hash[:profile_quote] = quote.text
