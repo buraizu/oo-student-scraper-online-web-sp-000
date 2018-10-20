@@ -8,14 +8,15 @@ class Student
 
   def initialize(student_hash)
     @@all << self
+    self.send(:create_from_collection, student_hash)
   end
 
   def self.create_from_collection(students_array)
     students_array.each do |student|
-      student_hash = {}
-      student_hash[:name] = student[:name]
-      student_hash[:location] = student[:location]
-      student_hash[:profile_url] = student[:profile_url]
+      s_hash = {}
+      s_hash[:name] = student[:name]
+      s_hash[:location] = student[:location]
+      s_hash[:profile_url] = student[:profile_url]
       new_student = Student.new(student_hash)
       new_student.name = student[:name]
       new_student.location = student[:location]
