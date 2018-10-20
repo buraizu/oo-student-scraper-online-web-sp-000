@@ -17,6 +17,10 @@ class Student
       student_hash[:location] = student[:location]
       student_hash[:profile_url] = student[:profile_url]
       new_student = Student.new(student_hash)
+      new_student.name = student[:name]
+      new_student.location = student[:location]
+      new_student.profile_url = student[:profile_url]
+      new_student
     end
   end
 
