@@ -29,7 +29,9 @@ class Scraper
           profile_hash[:linkedin] = link
         elsif link.include?("github")
           profile_hash[:github] = link
-        profile_hash[:blog] = social.css("a")[3]["href"]
+        else
+          profile_hash[:blog] = link
+        end
       end
       doc.css(".profile-quote").each do |quote|
         profile_hash[:profile_quote] = quote.text
