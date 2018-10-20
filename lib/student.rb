@@ -1,4 +1,4 @@
-
+rq
 
 class Student
 
@@ -11,22 +11,15 @@ class Student
   end
 
   def self.create_from_collection(students_array)
-    new_student = self.new
     students_array.each do |student|
-      student.name = new_student.name
-      student.location = new_student.location
-      student.profile_url = new_student.profile_url
+      student_hash = {}
+      student_hash[:name] = student[:name]
+      student_hash[:location] = student[:location]
+      student_hash[:profile_url] = student[:profile_url]
+      new_student = Student.new(student_hash)
     end
   end
 
-  def add_student_attributes(attributes_hash)
-
-  end
-
-  def self.all
-    @@all
-  end
-end
 
 
 # Scraper.scrape_index_page(index_url)
