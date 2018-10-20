@@ -1,4 +1,4 @@
-rq
+
 
 class Student
 
