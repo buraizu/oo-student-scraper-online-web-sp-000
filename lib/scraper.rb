@@ -21,14 +21,16 @@ class Scraper
     doc = Nokogiri::HTML(open(profile_url))
     profile_hash = {}
       doc.css(".social-icon-container").each do |social|
-        if social.css("a")[0]["href"] == "twitter" 
+        if social.css("a")[0]["href"].include?("twitter")
           profile_hash[:twitter] = social.css("a")[0]["href"]
         end
-        if social.css("a")[1]["href"] == "linkedin"
+        if social.css("a")[1]["href"]include?("linkedin")
           profile_hash[:linkedin] = social.css("a")[1]["href"]
         end
-        if social.css("a")[2]["href"] == "github"
-        profile_hash[:github] = social.css("a")[2]["href"]
+        if social.css("a")[2]["href"]include?("github")
+          profile_hash[:github] = social.css("a")[2]["href"]
+        end
+        if social.css("a")[3]["href"] ==
         profile_hash[:blog] = social.css("a")[3]["href"]
       end
       doc.css(".profile-quote").each do |quote|
