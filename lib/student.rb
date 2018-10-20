@@ -1,4 +1,4 @@
-rq
+
 
 class Student
 
@@ -20,7 +20,7 @@ class Student
     end
   end
 
-
+end
 
 # Scraper.scrape_index_page(index_url)
 # # => [
